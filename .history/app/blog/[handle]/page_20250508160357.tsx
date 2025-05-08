@@ -5,7 +5,7 @@ import { RenderBuilderContent } from "@/components/builder";
 import Head from "next/head";
 
 // Replace with your Public API Key
-builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
+builder.init(process.env.);
 
 type BuilderPageProps = ComponentProps<typeof BuilderComponent>;
 
