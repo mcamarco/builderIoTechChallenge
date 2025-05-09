@@ -20,6 +20,12 @@ export default async function Page(props: PageProps) {
     })
     .toPromise();
 
+  const announce = await builder
+    .get("announcement-bar", {
+      userAttributes: { urlPath },
+    })
+    .toPromise();
+
   return (
     <>
       {/* Render the Builder page */}

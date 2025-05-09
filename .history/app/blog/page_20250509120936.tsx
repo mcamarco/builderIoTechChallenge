@@ -1,5 +1,6 @@
 import React from "react";
 import { builder } from "@builder.io/sdk";
+import Link from "next/link";
 
 // Replace with your Public API Key
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY!);
@@ -13,6 +14,7 @@ interface PageProps {
 const ARTICLES_PER_PAGE =30;
 
 export default async function Blog(props: PageProps) {
+  console.log('hello doug')
   // Get the page number from the path or query parameter
   // In this example we are hardcoding it as 1
   const pageNumber = 1;
@@ -29,7 +31,7 @@ export default async function Blog(props: PageProps) {
   return (
     <div>
       {articles.map((item) => (
-        <Link href={`/blog/${item.data.handle}`}>
+        <Link href={`/blog-article/${item.data.handle}`}>
           <div css={{ overflow: "hidden", width: 300 }}>
             <div css={{ width: 300, height: 200, display: "block" }}>
               <img src={item.data.image} />

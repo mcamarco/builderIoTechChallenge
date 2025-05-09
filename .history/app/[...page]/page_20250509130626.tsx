@@ -20,11 +20,17 @@ export default async function Page(props: PageProps) {
     })
     .toPromise();
 
+  const blogArticleContent = await builder
+    .get("blog-article", {
+      userAttributes: { urlPath },
+    })
+    .toPromise();
+
   return (
     <>
       {/* Render the Builder page */}
-      <RenderBuilderContent content={blogArticleContent} model="blog-article" />
-      <RenderBuilderContent content={pageContent} model="page" options={{ enrich: true }} />
+      <RenderBuilderContent content={content} model="blog-article" />
+      <RenderBuilderContent content={content} model={builderModelName} options={{ enrich: true }} />
     </>
   );
 }
